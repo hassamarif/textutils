@@ -5,12 +5,16 @@ export default function TextForm(props) {
     let newText = text.toUpperCase();
     setText(newText);
   };
+  const handleLoClick = () => {
+    let newText = text.toLowerCase();
+    setText(newText);
+  };
 
   const handleOnChange = (event) => {
     setText(event.target.value);
   };
 
-  const [text, setText] = useState("Enter Text Here");
+  const [text, setText] = useState("");
   return (
     <>
       <div>
@@ -22,12 +26,16 @@ export default function TextForm(props) {
           id="exampleFormControlTextarea1"
           rows="8"
         ></textarea>
-        <button className="btn btn-primary m-2" onClick={handleUpClick}>
+        <button className="btn btn-primary m-1" onClick={handleUpClick}>
           Convert to UperCase
+        </button>
+        <button className="btn btn-primary m-1" onClick={handleLoClick}>
+          {" "}
+          Convert to LowerCase{" "}
         </button>
       </div>
       <div className="container">
-        <h1>Your Text Summry</h1>
+        <h2>Your Text Summry</h2>
         <p>
           Words {text.split(" ").length} and chracters {text.length}
         </p>
