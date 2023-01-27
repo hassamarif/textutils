@@ -40,6 +40,16 @@ export default function TextForm(props) {
         <button className="btn btn-primary m-1" onClick={handleClearClick}>
           Clear Text
         </button>
+
+        <input
+          className="form-control m-2 "
+          type="search"
+          placeholder="Search word"
+          aria-label="Search"
+        />
+        <button className="btn btn-primary m-1 " type="submit">
+          Search
+        </button>
       </div>
       <div className="container">
         <h2>Your Text Summry</h2>
