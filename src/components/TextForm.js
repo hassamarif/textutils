@@ -11,6 +11,14 @@ export default function TextForm(props) {
     setText(newText);
   };
 
+  const onChangeHandle = () => {
+    // search text
+  };
+
+  const handleSearchClick = () => {
+    // search button
+  };
+
   const handleClearClick = () => {
     let newText = "";
     setText(newText);
@@ -42,12 +50,14 @@ export default function TextForm(props) {
         </button>
 
         <input
-          className="form-control m-2 "
+          className="form-control m-2 w-25"
           type="search"
           placeholder="Search word"
           aria-label="Search"
+          onChange={onChangeHandle}
         />
-        <button className="btn btn-primary m-1 " type="submit">
+
+        <button className="btn btn-primary mx-2 " onClick={handleSearchClick}>
           Search
         </button>
       </div>
