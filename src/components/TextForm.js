@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-// import { TextToSpeechClient } from "@google-cloud/text-to-speech";
 
 export default function TextForm(props) {
   //uper
@@ -14,9 +13,6 @@ export default function TextForm(props) {
     setText(newText);
   };
 
-  //listen
-  const handleListenClick = () => {};
-
   //clear
   const handleClearClick = () => {
     setText("");
@@ -27,26 +23,6 @@ export default function TextForm(props) {
   };
 
   const [text, setText] = useState("");
-
-  // // for search
-  // const onChangeHandle = (e) => {
-  //   setsearch(e.target.value);
-  // };
-
-  // const handleSearch = (e) => {
-  //   // search button
-  //   let words = text.split(" ");
-  //   let highlightedText = words.map((word) => {
-  //     if (word === search) {
-  //       return `<span style='background-color: yellow;'>${word}</span>`;
-  //     }
-  //     return word;
-  //   });
-  //   // setText(highlightedText.join(" "));
-  //   // console.log(search);
-  //   console.log(highlightedText.join(" "));
-  // };
-  // const [search, setsearch] = useState("");
 
   return (
     <>
@@ -68,21 +44,6 @@ export default function TextForm(props) {
         <button className="btn btn-primary m-1" onClick={handleClearClick}>
           Clear Text
         </button>
-        <button className="btn btn-primary m-1" onClick={handleListenClick}>
-          🔊
-        </button>
-
-        {/* <input
-          className="form-control m-2 w-25"
-          type="search"
-          placeholder="Search word"
-          aria-label="Search"
-          onClick={onChangeHandle}
-        />
-
-        <button className="btn btn-primary mx-2 " onClick={handleSearch}>
-          Search
-        </button> */}
       </div>
       <div className="container">
         <h2>Your Text Summry</h2>
