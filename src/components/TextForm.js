@@ -1,33 +1,53 @@
 import React, { useState } from "react";
+// import { TextToSpeechClient } from "@google-cloud/text-to-speech";
 
 export default function TextForm(props) {
+  //uper
   const handleUpClick = () => {
     let newText = text.toUpperCase();
     setText(newText);
   };
 
+  //lower
   const handleLoClick = () => {
     let newText = text.toLowerCase();
     setText(newText);
   };
 
-  const onChangeHandle = () => {
-    // search text
-  };
+  //listen
+  const handleListenClick = () => {};
 
-  const handleSearchClick = () => {
-    // search button
-  };
-
+  //clear
   const handleClearClick = () => {
-    let newText = "";
-    setText(newText);
+    setText("");
   };
+
   const handleOnChange = (event) => {
     setText(event.target.value);
   };
 
   const [text, setText] = useState("");
+
+  // // for search
+  // const onChangeHandle = (e) => {
+  //   setsearch(e.target.value);
+  // };
+
+  // const handleSearch = (e) => {
+  //   // search button
+  //   let words = text.split(" ");
+  //   let highlightedText = words.map((word) => {
+  //     if (word === search) {
+  //       return `<span style='background-color: yellow;'>${word}</span>`;
+  //     }
+  //     return word;
+  //   });
+  //   // setText(highlightedText.join(" "));
+  //   // console.log(search);
+  //   console.log(highlightedText.join(" "));
+  // };
+  // const [search, setsearch] = useState("");
+
   return (
     <>
       <div>
@@ -48,18 +68,21 @@ export default function TextForm(props) {
         <button className="btn btn-primary m-1" onClick={handleClearClick}>
           Clear Text
         </button>
+        <button className="btn btn-primary m-1" onClick={handleListenClick}>
+          🔊
+        </button>
 
-        <input
+        {/* <input
           className="form-control m-2 w-25"
           type="search"
           placeholder="Search word"
           aria-label="Search"
-          onChange={onChangeHandle}
+          onClick={onChangeHandle}
         />
 
-        <button className="btn btn-primary mx-2 " onClick={handleSearchClick}>
+        <button className="btn btn-primary mx-2 " onClick={handleSearch}>
           Search
-        </button>
+        </button> */}
       </div>
       <div className="container">
         <h2>Your Text Summry</h2>
@@ -68,7 +91,11 @@ export default function TextForm(props) {
         </p>
         <p>Minutes Read {0.008 * text.split(" ").length}</p>
         <h1>Preview</h1>
-        <p>{text}</p>
+        <div className="m-3 border border-dark p-3 rounded-4">
+          <h6>
+            <p>{text}</p>
+          </h6>
+        </div>
       </div>
     </>
   );

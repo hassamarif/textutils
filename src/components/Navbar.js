@@ -32,7 +32,20 @@ export default function Navbar(props) {
               </a>
             </li>
           </ul>
-          <form className="d-flex" role="search"></form>
+          <form className="d-flex" role="search">
+            <input
+              className="form-control mr-sm-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button
+              className="btn btn-outline-success m-2 my-sm-0"
+              type="submit"
+            >
+              Search
+            </button>
+          </form>
         </div>
       </div>
     </nav>
