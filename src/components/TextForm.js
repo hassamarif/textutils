@@ -18,6 +18,13 @@ export default function TextForm(props) {
     setText("");
   };
 
+  // copy
+  const handleCopyClick = () => {
+    var text = document.getElementById("myBox");
+    text.select();
+    navigator.clipboard.writeText(text.value);
+  };
+
   const handleOnChange = (event) => {
     setText(event.target.value);
   };
@@ -32,7 +39,7 @@ export default function TextForm(props) {
           className="form-control"
           value={text}
           onChange={handleOnChange}
-          id="exampleFormControlTextarea1"
+          id="myBox"
           rows="8"
         ></textarea>
         <button className="btn btn-primary m-1" onClick={handleUpClick}>
@@ -43,6 +50,9 @@ export default function TextForm(props) {
         </button>
         <button className="btn btn-primary m-1" onClick={handleClearClick}>
           Clear Text
+        </button>
+        <button className="btn btn-primary m-1" onClick={handleCopyClick}>
+          Copy
         </button>
       </div>
       <div className="container">
