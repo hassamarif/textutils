@@ -25,7 +25,7 @@ export default function About() {
     }
   };
   return (
-    <div className="container" style={myStyle}>
+    <div className="container rounded" style={myStyle}>
       <h1 className="my-2">About us</h1>
       <div className="accordion" id="accordionExample">
         <div className="accordion-item" style={myStyle}>
