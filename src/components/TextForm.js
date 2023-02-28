@@ -29,6 +29,12 @@ export default function TextForm(props) {
     setText(event.target.value);
   };
 
+  //capitalizing first alphabit of perview portion
+  const capitalize = (word) => {
+    const lower = word.toLowerCase();
+    return lower.charAt(0).toUpperCase() + lower.slice(1);
+  };
+
   const [text, setText] = useState("");
 
   return (
@@ -76,7 +82,9 @@ export default function TextForm(props) {
         <div className="m-3">
           <h6>
             <p>
-              {text.length > 0 ? text : "Enter something to perview it here!"}
+              {text.length > 0
+                ? capitalize(text)
+                : "Enter something to perview it here!"}
             </p>
           </h6>
         </div>
