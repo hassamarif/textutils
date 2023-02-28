@@ -5,17 +5,20 @@ export default function TextForm(props) {
   const handleUpClick = () => {
     let newText = text.toUpperCase();
     setText(newText);
+    props.showAlert("Text has been convert to Upper case!", "success");
   };
 
   //lower
   const handleLoClick = () => {
     let newText = text.toLowerCase();
     setText(newText);
+    props.showAlert("Text has been convert to Lower case!", "success");
   };
 
   //clear
   const handleClearClick = () => {
     setText("");
+    props.showAlert("Text Cleared!", "success");
   };
 
   // copy
@@ -23,6 +26,7 @@ export default function TextForm(props) {
     var text = document.getElementById("myBox");
     text.select();
     navigator.clipboard.writeText(text.value);
+    props.showAlert("Copied!", "success");
   };
 
   const handleOnChange = (event) => {
