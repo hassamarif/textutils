@@ -5,20 +5,20 @@ export default function TextForm(props) {
   const handleUpClick = () => {
     let newText = text.toUpperCase();
     setText(newText);
-    props.showAlert("Text has been convert to Upper case!", "success");
+    props.showAlert(" Text has been convert to Upper case!", "success");
   };
 
   //lower
   const handleLoClick = () => {
     let newText = text.toLowerCase();
     setText(newText);
-    props.showAlert("Text has been convert to Lower case!", "success");
+    props.showAlert(" Text has been convert to Lower case!", "success");
   };
 
   //clear
   const handleClearClick = () => {
     setText("");
-    props.showAlert("Text Cleared!", "success");
+    props.showAlert(" Text Cleared!", "success");
   };
 
   // copy
@@ -26,17 +26,16 @@ export default function TextForm(props) {
     var text = document.getElementById("myBox");
     text.select();
     navigator.clipboard.writeText(text.value);
-    props.showAlert("Copied!", "success");
+    props.showAlert(" Copied to clipboard!", "success");
   };
-
-  const handleOnChange = (event) => {
-    setText(event.target.value);
-  };
-
   //capitalizing first alphabit of perview portion
   const capitalize = (word) => {
     const lower = word.toLowerCase();
     return lower.charAt(0).toUpperCase() + lower.slice(1);
+  };
+
+  const handleOnChange = (event) => {
+    setText(event.target.value);
   };
 
   const [text, setText] = useState("");
