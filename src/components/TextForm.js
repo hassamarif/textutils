@@ -28,6 +28,15 @@ export default function TextForm(props) {
     navigator.clipboard.writeText(text.value);
     props.showAlert(" Copied to clipboard!", "success");
   };
+  // paste
+  const handlePasteClick = async () => {
+    try {
+      const clipboardText = await navigator.clipboard.readText();
+      setText(clipboardText);
+    } catch (error) {
+      console.error("Failed to read clipboard contents: ", error);
+    }
+  };
   //capitalizing first alphabit of perview portion
   const capitalize = (word) => {
     const lower = word.toLowerCase();
@@ -42,7 +51,7 @@ export default function TextForm(props) {
 
   return (
     <>
-      <div>
+      <div className="container">
         <h1>{props.heading}</h1>
         <textarea
           className="form-control"
@@ -71,6 +80,9 @@ export default function TextForm(props) {
         </button>
         <button className="btn btn-primary m-1" onClick={handleCopyClick}>
           Copy
+        </button>
+        <button className="btn btn-primary m-1" onClick={handlePasteClick}>
+          Paste
         </button>
       </div>
       <div className="container">
