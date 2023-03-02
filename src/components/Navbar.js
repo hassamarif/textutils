@@ -35,20 +35,6 @@ export default function Navbar(props) {
               </Link>
             </li>
           </ul>
-          {/* <form className="d-flex" role="search">
-            <input
-              className="form-control mr-sm-2"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-            <button
-              className="btn btn-outline-success m-2 my-sm-0"
-              type="submit"
-            >
-              Search
-            </button>
-          </form> */}
           <div class="form-check form-switch">
             <input
               className="form-check-input"
@@ -58,7 +44,7 @@ export default function Navbar(props) {
               id="flexSwitchCheckDefault"
             />
             <label
-              className={`form-check-label text-${
+              className={` form-check-label pe-auto text-${
                 props.mode === "light" ? "dark" : "light"
               }`}
               htmlFor="flexSwitchCheckDefault"
